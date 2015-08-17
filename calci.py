@@ -24,16 +24,16 @@ def multi(a,b):
 
 "The Main function"
 def Main():
-	parser = argparse.ArgumentParser(description="A basic Calculator")
+	parser = argparse.ArgumentParser(description = "A basic Calculator")
 	
 	group = parser.add_mutually_exclusive_group()
-	group.add_argument("-fa","--fadd",help="Performs addition",action="store_true")
-	group.add_argument("-fs","--fsub",help="Performs subtraction",action="store_true")
-	group.add_argument("-fd","--fdiv",help="Performs division",action="store_true")
-	group.add_argument("-fm","--fmulti",help="Performs multiplication",action="store_true")
+	group.add_argument("-fa","--fadd",help = "Performs addition",action = "store_true")
+	group.add_argument("-fs","--fsub",help = "Performs subtraction",action = "store_true")
+	group.add_argument("-fd","--fdiv",help = "Performs division",action = "store_true")
+	group.add_argument("-fm","--fmulti",help = "Performs multiplication",action = "store_true")
 
-	parser.add_argument("num1",help="Number1 to calculate",type=int)
-	parser.add_argument("num2",help="Number2 to calculate",type=int)
+	parser.add_argument("num1",help = "Number1 to calculate",type = float)
+	parser.add_argument("num2",help = "Number2 to calculate",type = float)
 
 	args = parser.parse_args()
 
