@@ -1,12 +1,12 @@
 # Calci
-Calci is a Command line calculator for Linux that performs basic operations like addition, subtraction, multiplication and division. It is a command line tool built using Python3. 
+Calci is a Command line calculator for Linux. It is a command line tool built using Python3. 
 
 ##Instructions
 To run the command line calculator follow the steps given below:
 
 * `git clone https://github.com/trishnaguha/Calci.git`
 
-* `python3 calci.py followed by arguments in your terminal`
+* `python3 calci.py followed by arguments in terminal`
 
 * `Type python3 calci.py -h for help`
 
