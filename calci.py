@@ -32,6 +32,14 @@ def perc(a):
 def fact(a):
 	return math.factorial(a)
 
+"Performs sqaure root"
+def squarert(a):
+	return math.sqrt(a)
+
+"Performs power operation"
+def power(a,b):
+	return math.pow(a,b)
+
 "The Main function"
 def main():
 	parser = argparse.ArgumentParser(description = "A Command Line Calculator", epilog = "Enter two numbers for addition,subtraction and so on.... \n Enter only one number for percentage calculation,factorial and so on....")
@@ -43,10 +51,12 @@ def main():
 	group.add_argument("-fm", "--fmulti", help = "Performs multiplication", action = "store_true")
 	group.add_argument("-fp", "--fperc", help = "Performs percentage calculation", action = "store_true")
 	group.add_argument("-ff", "--ffact", help = "Performs factorial calculation", action = "store_true")
-	
+	group.add_argument("-fsq", "--fsqrt", help = "Performs square root", action = "store_true")
+	group.add_argument("-fpw", "--fpow", help = "Performs power operation", action = "store_true")	
+
 
 	parser.add_argument("num1", help = "Number1 to calculate", type = int)
-	parser.add_argument("num2", nargs='?', help = "Number2 to calculate, this is optional", type = int)
+	parser.add_argument("num2", nargs = '?', help = "Number2 to calculate, this is optional", type = int)
 
 	args = parser.parse_args()
 
@@ -62,6 +72,10 @@ def main():
 		print("The percentage of {} is {}".format(args.num1,(perc(args.num1))))
 	elif args.ffact:
 		print("The factorial of {} is {}".format(args.num1,(fact(args.num1))))
+	elif args.fsqrt:
+		print("The square root of {} is {}".format(args.num1,(squarert(args.num1))))
+	elif args.fpow:
+		print("{} raised to the power {} results {}".format(args.num1,args.num2,(power(args.num1,args.num2))))
 	else:
 		print("Error: requires an argument to perform an action\nType python3 calci.py -h or python3 calci.py --help for help")
 	
