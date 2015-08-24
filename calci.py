@@ -42,42 +42,65 @@ def power(a,b):
 
 "The Main function"
 def main():
-	parser = argparse.ArgumentParser(description = "A Command Line Calculator", epilog = "Enter two numbers for addition,subtraction and so on.... \n Enter only one number for percentage calculation,factorial and so on....")
+	parser = argparse.ArgumentParser(description = "A Command Line Calculator", \
+				epilog = "Enter two numbers for addition,subtraction \
+				and so on....\n Enter only one number for percentage \
+				calculation,factorial and so on....")
 	
 	group = parser.add_mutually_exclusive_group()
-	group.add_argument("-fa", "--fadd", help = "Performs addition", action = "store_true")
-	group.add_argument("-fs", "--fsub", help = "Performs subtraction", action = "store_true")
-	group.add_argument("-fd", "--fdiv", help = "Performs division", action = "store_true")
-	group.add_argument("-fm", "--fmulti", help = "Performs multiplication", action = "store_true")
-	group.add_argument("-fp", "--fperc", help = "Performs percentage calculation", action = "store_true")
-	group.add_argument("-ff", "--ffact", help = "Performs factorial calculation", action = "store_true")
-	group.add_argument("-fsq", "--fsqrt", help = "Performs square root", action = "store_true")
-	group.add_argument("-fpw", "--fpow", help = "Performs power operation", action = "store_true")	
+	group.add_argument("-fa", "--fadd", help = "Performs addition", \
+			action = "store_true")
+	group.add_argument("-fs", "--fsub", help = "Performs subtraction", \
+			action = "store_true")
+	group.add_argument("-fd", "--fdiv", help = "Performs division", \
+			action = "store_true")
+	group.add_argument("-fm", "--fmulti", help = "Performs multiplication", \
+			action = "store_true")
+	group.add_argument("-fp", "--fperc", help = "Performs percentage calculation", \
+			action = "store_true")
+	group.add_argument("-ff", "--ffact", help = "Performs factorial calculation", \
+			action = "store_true")
+	group.add_argument("-fsq", "--fsqrt", help = "Performs square root", \
+			action = "store_true")
+	group.add_argument("-fpw", "--fpow", help = "Performs power operation", \
+			action = "store_true")	
 
 
-	parser.add_argument("num1", help = "Number1 to calculate", type = int)
-	parser.add_argument("num2", nargs = '?', help = "Number2 to calculate, this is optional", type = int)
+	parser.add_argument("num1", help = "Number1 to calculate",\
+			type = int)
+	parser.add_argument("num2", nargs = '?', help = "Number2 to calculate,\
+			this is optional", type = int)
 
 	args = parser.parse_args()
 
 	if args.fadd:
-		print("The addition result of {} and {} is {}".format(args.num1,args.num2,(add(args.num1,args.num2))))
+		print("The addition result of {} and {} is {}".format \
+			(args.num1,args.num2,(add(args.num1,args.num2))))
 	elif args.fsub:
-		print("The subtraction result of {} and {} is {}".format(args.num1,args.num2,(sub(args.num1,args.num2))))
+		print("The subtraction result of {} and {} is {}".format \
+			(args.num1,args.num2,(sub(args.num1,args.num2))))
 	elif args.fdiv:
-		print("The division result of {} and {} is {}".format(args.num1,args.num2,(div(args.num1,args.num2))))
+		print("The division result of {} and {} is {}".format \
+			(args.num1,args.num2,(div(args.num1,args.num2))))
 	elif args.fmulti:
-		print("The multiplication result of {} and {} is {}".format(args.num1,args.num2,(multi(args.num1,args.num2))))
+		print("The multiplication result of {} and {} is {}".format \
+			(args.num1,args.num2,(multi(args.num1,args.num2))))
 	elif args.fperc:
-		print("The percentage of {} is {}".format(args.num1,(perc(args.num1))))
+		print("The percentage of {} is {}".format(args.num1, \
+			(perc(args.num1))))
 	elif args.ffact:
-		print("The factorial of {} is {}".format(args.num1,(fact(args.num1))))
+		print("The factorial of {} is {}".format(args.num1, \
+			(fact(args.num1))))
 	elif args.fsqrt:
-		print("The square root of {} is {}".format(args.num1,(squarert(args.num1))))
+		print("The square root of {} is {}".format(args.num1, \
+			(squarert(args.num1))))
 	elif args.fpow:
-		print("{} raised to the power {} results {}".format(args.num1,args.num2,(power(args.num1,args.num2))))
+		print("{} raised to the power {} results {}".format \
+			(args.num1,args.num2,(power(args.num1,args.num2))))
 	else:
-		print("Error: requires an argument to perform an action\nType python3 calci.py -h or python3 calci.py --help for help")
+		print("Error: requires an argument to perform an action\n \
+			Type python3 calci.py -h or \
+			python3 calci.py --help for help")
 	
 if __name__ == '__main__':
 	main()
