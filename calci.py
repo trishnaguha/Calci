@@ -40,6 +40,30 @@ def squarert(a):
 def power(a,b):
 	return math.pow(a,b)
 
+"Performs base-10 logarithm"
+def log(a):
+	return math.log10(a)
+
+"Performs sine operation"
+def sin(a):
+	return math.sin(a)
+
+"Performs cosine operation"
+def cos(a):
+	return math.cos(a)
+
+"Performs tangent operation"
+def tan(a):
+	return math.tan(a)
+
+"Converts angle a from radians to degrees"
+def deg(a):
+	return math.degrees(a)
+
+"Converts angle a from degrees to radians"
+def rad(a):
+	return math.radians(a)
+
 "The Main function"
 def main():
 	parser = argparse.ArgumentParser(description = "A Command Line Calculator", \
@@ -64,6 +88,18 @@ def main():
 			action = "store_true")
 	group.add_argument("-fpw", "--fpow", help = "Performs power operation", \
 			action = "store_true")	
+	group.add_argument("-fl", "--flog", help = "Performs base-10 logarithm", \
+			action = "store_true")
+	group.add_argument("-fsi", "--fsin", help = "Performs sine operation", \
+			action = "store_true")
+	group.add_argument("-fco", "--fcos", help = "Performs cosine operation", \
+			action = "store_true")
+	group.add_argument("-fta", "--ftan", help = "Performs tangent operation", \
+			action = "store_true")
+	group.add_argument("-fdg", "--fdeg", help = "Converts angle from radians \
+			to degrees", action = "store_true")
+	group.add_argument("-frd", "--frad", help = "Converts angle from degrees \
+			to radians", action = "store_true")
 
 
 	parser.add_argument("num1", help = "Number1 to calculate",\
@@ -97,6 +133,24 @@ def main():
 	elif args.fpow:
 		print("{} raised to the power {} results {}".format \
 			(args.num1,args.num2,(power(args.num1,args.num2))))
+	elif args.flog:
+		print("The base-10 logarithmic value of {} is {}".format \
+			(args.num1, (log(args.num1))))
+	elif args.fsin:
+		print("Sine of {} radians is {}".format(args.num1, \
+			(sin(args.num1))))
+	elif args.fcos:
+		print("Cosine of {} radians is {}".format(args.num1, \
+			(cos(args.num1))))
+	elif args.ftan:
+		print("Tangent of {} radians is {}".format(args.num1, \
+			(tan(args.num1))))
+	elif args.fdeg:
+		print("{} radians to degrees is {}".format(args.num1, \
+			(deg(args.num1))))
+	elif args.frad:
+		print("{} degrees to radians is {}".format(args.num1, \
+			(rad(args.num1))))
 	else:
 		print("Error: requires an argument to perform an action\n \
 			Type python3 calci.py -h or \
