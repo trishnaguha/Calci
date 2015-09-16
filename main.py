@@ -58,7 +58,7 @@ def tan(a):
 
 "Converts angle a from radians to degrees"
 def deg(a):
-	return math.degrees(a)
+	return math.degrees(int(a))
 
 "Converts angle a from degrees to radians"
 def rad(a):
