@@ -46,19 +46,19 @@ def log(a):
 
 "Performs sine operation"
 def sin(a):
-	return math.sin(a)
+	return math.sin(math.radians(a))
 
 "Performs cosine operation"
 def cos(a):
-	return math.cos(a)
+	return math.cos(math.radians(a))
 
 "Performs tangent operation"
 def tan(a):
-	return math.tan(a)
+	return math.tan(math.radians(a))
 
 "Converts angle a from radians to degrees"
 def deg(a):
-	return math.degrees(a)
+	return math.degrees(int(a))
 
 "Converts angle a from degrees to radians"
 def rad(a):
