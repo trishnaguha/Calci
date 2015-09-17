@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import unittest
 import main
@@ -21,13 +21,13 @@ class TestCalci(unittest.TestCase):
         self.assertEqual(main.multi(6, 2), 12, 'multiplication fail')
  	
     def test_perc(self):
-	self.assertEqual(main.perc(138), 1, 'percentage fail')
+        self.assertEqual(main.perc(138), 1.38, 'percentage fail')
 
     def test_fact(self):
-	self.assertEqual(main.fact(3), 6, 'factorial fail')
+        self.assertEqual(main.fact(3), 6, 'factorial fail')
         
     def test_squarert(self):
-	self.assertEqual(main.squarert(4), 2, 'square root fail')
+        self.assertEqual(main.squarert(4), 2, 'square root fail')
 
     def test_power(self):
         self.assertEqual(main.power(3, 3), 27, 'power fail') 
@@ -39,7 +39,7 @@ class TestCalci(unittest.TestCase):
         self.assertAlmostEqual(main.sin(int(90)), float(1.0), 'sine fail')
 
     def test_cosine(self):
-	self.assertAlmostEqual(main.cos(int(0)), float(1.0), 'cosine fail')
+        self.assertAlmostEqual(main.cos(int(0)), float(1.0), 'cosine fail')
 
  #    def test_tangent(self):
 	# self.assertAlmostEqual(main.tan(int(45)), float(1.0), 'tangent fail')
@@ -51,7 +51,7 @@ class TestCalci(unittest.TestCase):
 	# self.assertAlmostEqual(main.rad(int(1)), float(0.0174532925199), 'degrees to radians fail')
 
     def tearDown(self):
-	pass
+        pass
 
 if __name__ == '__main__':
     unittest.main()
