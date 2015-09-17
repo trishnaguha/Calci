@@ -13,6 +13,5 @@ To run the command line calculator follow the steps given below:
 Fork Calci and send pull requests to add extra features or edit the existing features. You are also welcome to open an issue if there is any :)
 
 ###Unit testing
-```
-python3 -m unittest discover
-```
+
+`python3 -m unittest discover`
