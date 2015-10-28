@@ -10,8 +10,6 @@ To run the command line calculator follow the steps given below:
 
 *  Type `python3 main.py -h` for help
 
-Fork Calci and send pull requests to add extra features or edit the existing features. You are also welcome to open an issue if there is any :)
-
 ###Features
 |       Operations        |   short_args  | long_args |
 | ----------------------- | ------------- | --------- |
