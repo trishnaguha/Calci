@@ -12,6 +12,25 @@ To run the command line calculator follow the steps given below:
 
 Fork Calci and send pull requests to add extra features or edit the existing features. You are also welcome to open an issue if there is any :)
 
+###Features
+|       Operations        |   short_args  | long_args |
+| ----------------------- | ------------- | --------- |
+| Addition                | -fa           | --fadd    |
+| Subtraction             | -fs           | --fsub    |
+| Division                | -fd           | --fdiv    |
+| Multiplication          | -fm           | --fmulti  |
+| Percentage              | -fp           | --fperc   |
+| Factorial               | -ff           | --ffact   |
+| Square Root             | -fsq          | --fsqrt   |
+| Power                   | -fpw          | --fpow    |
+| Logarithm10             | -fl           | --flog    |
+| Sine                    | -fsi          | --fsin    |
+| Cosine                  | -fco          | --fcos    |
+| Tangent                 | -fta          | --ftan    |
+| Convert angle to Degree | -fdg          | --fdeg    |
+| Convert angle to Radian | -frd          | --frad    |
+
 ###Unit testing
 
 `python3 -m unittest discover`
+
