@@ -67,6 +67,11 @@ def log(a):
     return math.log10(a)
 
 
+def log2(a):
+    """Compute the Natural Logarithm of the number passed as argument."""
+    return math.log2(a)
+
+
 def sin(a):
     """Compute the Sine of the number passed as argument."""
     return math.sin(math.radians(a))
@@ -136,6 +141,10 @@ Enter only one number for percentage calculation, factorial and so on...""")
         help="Performs base-10 logarithm",
         action="store_true")
     group.add_argument(
+        "-fl2", "--flog2",
+        help="Performs base-2 logarithm",
+        action="store_true")
+    group.add_argument(
         "-fsi", "--fsin",
         help="Performs sine operation",
         action="store_true")
@@ -194,6 +203,10 @@ Enter only one number for percentage calculation, factorial and so on...""")
         print(
             "The base-10 logarithmic value of"
             " {} is {}".format(args.num1, (log(args.num1))))
+    elif args.flog2:
+        print(
+            "The base-2 logarithmic value of"
+            " {} is {}".format(args.num1, (log2(args.num1))))
     elif args.fsin:
         print("Sine of {} radians is {}".format(args.num1, (sin(args.num1))))
     elif args.fcos:
