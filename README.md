@@ -1,5 +1,5 @@
 # Calci
-Calci is a Command line calculator for Linux. It is a command line tool built using Python3. 
+Calci is a Command line calculator for Linux. It is a command line tool built using Python3.
 
 ##Instructions
 To run the command line calculator follow the steps given below:
@@ -22,6 +22,7 @@ To run the command line calculator follow the steps given below:
 | Square Root             | -fsq          | --fsqrt   |
 | Power                   | -fpw          | --fpow    |
 | Logarithm10             | -fl           | --flog    |
+| Logarithm2              | -fl2          | --flog2   |
 | Sine                    | -fsi          | --fsin    |
 | Cosine                  | -fco          | --fcos    |
 | Tangent                 | -fta          | --ftan    |
