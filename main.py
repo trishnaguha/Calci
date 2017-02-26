@@ -5,7 +5,6 @@ import argparse
 import math
 import sys
 
-
 def add(a, b):
     """Perform Addition of two numbers passed as arguments."""
     val = a + b
@@ -36,6 +35,16 @@ def multi(a, b):
     val = a * b
     return val
 
+def mod(a,b):
+    """Compute the modulus.
+
+    The number passed as argument 1 is modulus
+    to the number passed as argument 2.
+    """
+    val = a % b
+    return val
+
+
 
 def perc(a):
     """Compute the Percentage of the number passed as argument."""
@@ -47,6 +56,17 @@ def fact(a):
     """Compute the Factorial of the number passed as argument."""
     return math.factorial(a)
 
+def binary(a):
+    """Compute the binary equivalent of the decimal number passed as argument."""
+    return bin(a)
+
+def hexa(a):
+    """Compute the hexadecimal equivalent of the decimal number passed as argument."""
+    return hex(a)
+
+def octal(a):
+    """Compute the octal equivalent of the decimal number passed as argument."""
+    return oct(a)
 
 def squarert(a):
     """Compute the Square Root of the number passed as argument."""
@@ -95,6 +115,7 @@ def deg(a):
 def rad(a):
     """Convert angle passed as argument from degrees to radian."""
     return math.radians(a)
+	
 
 
 def main():
@@ -157,12 +178,28 @@ Enter only one number for percentage calculation, factorial and so on...""")
         help="Performs tangent operation",
         action="store_true")
     group.add_argument(
+        "-fb", "--fbin",
+        help="Convert to binary",
+        action="store_true")
+    group.add_argument(
+        "-fh", "--fhex",
+        help="Convert to hexadecimal",
+        action="store_true")
+    group.add_argument(
+        "-fo", "--foct",
+        help="Convert to octal",
+        action="store_true")
+    group.add_argument(
         "-fdg", "--fdeg",
         help="Converts angle from radians to degrees",
         action="store_true")
     group.add_argument(
         "-frd", "--frad",
         help="Converts angle from degrees to radians",
+        action="store_true")
+    group.add_argument(
+        "-fmo", "--fmod",
+        help="Performs modulus",
         action="store_true")
 
     parser.add_argument(
@@ -174,6 +211,7 @@ Enter only one number for percentage calculation, factorial and so on...""")
         nargs='?',
         help="Number2 to calculate, this is optional", type=int)
 
+
     args = parser.parse_args()
 
     if args.fadd:
@@ -182,6 +220,9 @@ Enter only one number for percentage calculation, factorial and so on...""")
     elif args.fsub:
         print("The subtraction result of {} and {} is {}".format(
             args.num1, args.num2, (sub(args.num1, args.num2))))
+    elif args.fmod:
+        print("The modulus result of {} and {} is {}".format(
+            args.num1, args.num2, (mod(args.num1, args.num2))))
     elif args.fdiv:
         print("The division result of {} and {} is {}".format(
             args.num1, args.num2, (div(args.num1, args.num2))))
@@ -196,6 +237,15 @@ Enter only one number for percentage calculation, factorial and so on...""")
     elif args.fsqrt:
         print("The square root of {} is {}".format(
             args.num1, (squarert(args.num1))))
+    elif args.fbin:
+        print("The binary equivalent of {} is {}".format(
+            args.num1, (binary(args.num1))))
+    elif args.foct:
+        print("The Octal equivalent of {} is {}".format(
+            args.num1, (octal(args.num1))))
+    elif args.fhex:
+        print("The Hexadecimal equivalent of {} is {}".format(
+            args.num1, (hexa(args.num1))))
     elif args.fpow:
         print("{} raised to the power {} results {}".format(
             args.num1, args.num2, (power(args.num1, args.num2))))
