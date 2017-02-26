@@ -56,8 +56,19 @@ class TestCalci(unittest.TestCase):
     def test_radians(self):
         self.assertAlmostEqual(
             main.rad(int(1)), float(0.017453292519943295),
-            'degrees to radians fail'
-        )
+            'degrees to radians fail')
+    
+    def test_binary(self):
+        self.assertEqual(main.binary(3), '0b11' , 'decimal to binary fail')
+        
+    def test_hexa(self):
+        self.assertEqual(main.hexa(15), '0xf' , 'decimal to hex fail')
+
+    def test_octal(self):
+        self.assertEqual(main.octal(9), '0o11' , 'decimal to octal fail')
+
+    def test_modulus(self):
+        self.assertEqual(main.mod(5, 3), 2 , 'modulus fail')
 
     def tearDown(self):
         pass
